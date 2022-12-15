@@ -1,5 +1,5 @@
 {
-  "include": ["src", "test"],
+  "include": ["dist"],
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
@@ -20,7 +20,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "*": ["dist/*", "node_modules/*"]
     },
     "esModuleInterop": true,
     "resolveJsonModule": true
