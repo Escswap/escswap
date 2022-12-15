@@ -35,6 +35,10 @@
       "pre-commit": "tsdx lint"
     }
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "prettier": {
     "printWidth": 80,
     "semi": true,

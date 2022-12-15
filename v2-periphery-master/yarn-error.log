@@ -1,0 +1,87 @@
+Arguments: 
+  D:\Develop\node.exe C:\Users\zwj\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\zwj\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\zwj\bin;C:\Python311\Scripts;C:\Python311;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\environment\Python 3.7.5;C:\environment\Python 3.7.5\Scripts;C:\environment\Anaconda3;C:\environment\Anaconda3\Library\mingw-w64\bin;C:\environment\Anaconda3\Library\usr\bin;C:\environment\Anaconda3\Library\bin;C:\environment\Anaconda3\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\environment\jdk1.8\bin;C:\environment\jdk1.8\bin\jre\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1;C:\environment\MySql\bin;D:\software\xftp;D:\software\xshell;D:\sumo\sumo-1.7.0\bin;D:\environment\apache-maven-3.8.4\bin;D:\software\texlive\2022\bin\win32;C:\ProgramData\chocolatey\bin;D:\Develop\node_global;D:\Develop\node_modules;C:\Program Files\Git\cmd;D:\Develop;C:\environment\Python 3.7.5\Scripts;C:\environment\Python 3.7.5;C:\Users\zwj\AppData\Local\Microsoft\WindowsApps;D:\software\PyCharm 2021.3.2\bin;D:\software\IntelliJ IDEA 2021.3.1\bin;D:\software\Microsoft VS Code\bin;C:\Users\zwj\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npmjs.org/@escswap%2flib: Not found
+      at Request.params.callback [as _callback] (C:\Users\zwj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+      at Request.self.callback (C:\Users\zwj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\zwj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\zwj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "@escswap/v2-periphery",
+    "version": "1.0.0",
+    "description": "🎚 Peripheral smart contracts for interacting with Escswap V2",
+    "engines": {
+      "node": ">=10"
+    },
+    "homepage": "https://escswap.org",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Escswap/escswap-v2-periphery"
+    },
+    "files": [
+      "build",
+      "contracts"
+    ],
+    "dependencies": {
+      "@escswap/lib": "1.0.0",
+      "@escswap/v2-core": "1.0.0"
+    },
+    "publishConfig": {
+      "access": "public",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "devDependencies": {
+      "@types/chai": "^4.2.6",
+      "@types/mocha": "^5.2.7",
+      "chai": "^4.2.0",
+      "ethereum-waffle": "^2.4.1",
+      "ethereumjs-util": "^6.2.0",
+      "mocha": "^6.2.2",
+      "ncp": "^2.0.0",
+      "prettier": "^1.19.1",
+      "rimraf": "^3.0.0",
+      "solc": "0.6.6",
+      "ts-node": "^8.5.4",
+      "typescript": "^3.7.3"
+    },
+    "scripts": {
+      "lint": "yarn prettier ./test/*.ts --check",
+      "lint:fix": "yarn prettier ./test/*.ts --write",
+      "clean": "rimraf ./build/",
+      "copy-v1-artifacts": "ncp ./buildV1 ./build",
+      "precompile": "yarn clean",
+      "compile": "waffle .waffle.json",
+      "postcompile": "yarn copy-v1-artifacts",
+      "pretest": "yarn compile",
+      "test": "mocha",
+      "prepublishOnly": "yarn test"
+    },
+    "license": "GPL-3.0-or-later"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
